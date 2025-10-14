@@ -21,12 +21,24 @@
     <ClCompile Include="utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="track.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="locomotive.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="numericalVectors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="track.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="locomotive.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
