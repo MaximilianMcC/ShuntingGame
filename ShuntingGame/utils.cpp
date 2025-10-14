@@ -1,4 +1,5 @@
 #include "utils.h"
+#include <cstdlib>
 
 // Register private static stuff
 sf::RenderWindow* Utils::window;
@@ -53,4 +54,14 @@ bool Utils::StringEndsWith(std::string string, std::string ending)
 		ending.length(),
 		ending
 	) == 0);
+}
+
+sf::Color Utils::GetRandomColor()
+{
+	// TODO: Seed it
+	return sf::Color(
+		std::rand() % 256,
+		std::rand() % 256,
+		std::rand() % 256
+	);
 }
