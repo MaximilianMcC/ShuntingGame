@@ -27,6 +27,12 @@
     <ClCompile Include="locomotive.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="railVehicle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rollingStock.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utils.h">
@@ -39,6 +45,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="locomotive.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="railVehicle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rollingStock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

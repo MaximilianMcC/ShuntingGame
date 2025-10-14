@@ -1,20 +1,14 @@
 #pragma once
 
-#include "track.h"
+#include "railVehicle.h"
 
-class locomotive
+class locomotive : public RailVehicle
 {
 private:
-	sf::RectangleShape shape;
-
-	Track* currentTrack;
 	float speed = 100.0f;
 	void Move();
 
 public:
-	float PositionOnTrack;
-
 	locomotive(Track* track);
-	void Update();
-	void Draw();
+	void Update() override;
 };
