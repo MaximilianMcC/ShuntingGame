@@ -3,7 +3,7 @@
 
 // Register private static stuff
 sf::RenderWindow* Utils::window;
-float* Utils::deltaTime;
+float Utils::DeltaTime;
 
 std::vector<std::string> Utils::Split(std::string string, std::string delimiter)
 {

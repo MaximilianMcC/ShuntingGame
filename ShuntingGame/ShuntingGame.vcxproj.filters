@@ -33,6 +33,9 @@
     <ClCompile Include="rollingStock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="trackHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utils.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="rollingStock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="trackHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

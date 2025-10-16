@@ -5,7 +5,7 @@
 			"name": "Launch ShuntingGame",
 			"type": "cppvsdbg",
 			"request": "launch",
-			"program": "${workspaceFolder}/Debug/ShuntingGame.exe",
+			"program": "${workspaceFolder}/Release/ShuntingGame.exe",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}/ShuntingGame",

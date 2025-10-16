@@ -157,6 +157,7 @@
     <ClCompile Include="railVehicle.cpp" />
     <ClCompile Include="rollingStock.cpp" />
     <ClCompile Include="track.cpp" />
+    <ClCompile Include="trackHandler.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +166,7 @@
     <ClInclude Include="railVehicle.h" />
     <ClInclude Include="rollingStock.h" />
     <ClInclude Include="track.h" />
+    <ClInclude Include="trackHandler.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

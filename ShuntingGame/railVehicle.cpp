@@ -2,25 +2,26 @@
 
 #include "utils.h"
 
+// TODO: Stop you from going off the edge of tracks
 void RailVehicle::FollowTrack(float newPositionOnTrack)
 {
 	// Check for if we're moving forwards onto the next bit of track
-	if ((newPositionOnTrack >= currentTrack->Length) && (currentTrack->NextTrack != nullptr))
+	if ((newPositionOnTrack >= CurrentTrack->Length) && (CurrentTrack->NextTrack != nullptr))
 	{
 		// Move to the start of the next track
-		currentTrack = currentTrack->NextTrack;
+		CurrentTrack = CurrentTrack->NextTrack;
 		newPositionOnTrack = 0.0f;
 
 		// TODO: Play fishplate sound effect
 	}
 
 	// Check for if we're moving backwards onto the previous bit of track
-	if ((newPositionOnTrack < 0.0f) && (currentTrack->PreviousTrack != nullptr))
+	if ((newPositionOnTrack < 0.0f) && (CurrentTrack->PreviousTrack != nullptr))
 	{;
 		// Move to the end of the previous track
-		currentTrack = currentTrack->PreviousTrack;
-		newPositionOnTrack = currentTrack->Length;
-		
+		CurrentTrack = CurrentTrack->PreviousTrack;
+		newPositionOnTrack = CurrentTrack->Length;
+
 		// TODO: Play fishplate sound effect
 	}
 
@@ -30,6 +31,6 @@ void RailVehicle::FollowTrack(float newPositionOnTrack)
 
 void RailVehicle::Draw()
 {
-	shape.setPosition(currentTrack->Position + sf::Vector2f(PositionOnTrack, 0.0f));
-	Utils::GetWindow()->draw(shape);
+    shape.setPosition(CurrentTrack->Position + sf::Vector2f(PositionOnTrack, 0.0f));
+    Utils::GetWindow()->draw(shape);
 }

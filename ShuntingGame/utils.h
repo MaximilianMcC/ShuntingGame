@@ -8,17 +8,16 @@ class Utils
 {
 private:
 	static sf::RenderWindow* window;
-	static float* deltaTime;
-
+	
 public:
-	static void Init(sf::RenderWindow* mainWindow, float* deltaTimePointer)
+	static float DeltaTime;
+
+	static void Init(sf::RenderWindow* mainWindow)
 	{
 		window = mainWindow;
-		deltaTime = deltaTimePointer;
 	}
 
 	static sf::RenderWindow* GetWindow() { return window; }
-	static float GetDeltaTime() { return *deltaTime; }
 
 	static std::vector<std::string> Split(std::string string, std::string delimiter);
 	static bool StringEndsWith(std::string string, std::string ending);

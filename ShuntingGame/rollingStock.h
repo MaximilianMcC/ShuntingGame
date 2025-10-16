@@ -1,5 +1,9 @@
 #pragma once
-class rollingStock
-{
-};
 
+#include "railVehicle.h"
+
+class RollingStock : public RailVehicle
+{
+public:
+	RollingStock(Track* track);
+};
