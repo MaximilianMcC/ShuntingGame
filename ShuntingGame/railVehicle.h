@@ -5,7 +5,7 @@
 class RailVehicle
 {
 protected:
-	sf::RectangleShape shape;
+	sf::RectangleShape* shape;
 
 	void FollowTrack(float newPositionOnTrack);
 	

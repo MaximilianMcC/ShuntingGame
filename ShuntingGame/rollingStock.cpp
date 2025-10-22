@@ -7,6 +7,6 @@ RollingStock::RollingStock(Track *track)
 	PositionOnTrack = 0.0f;
 
 	// Make the actual rolling stock
-	shape = sf::RectangleShape(sf::Vector2f(25.0f, 8.0f));
-	shape.setFillColor(sf::Color(0xFFFFB91DFF));
+	// shape = sf::RectangleShape(sf::Vector2f(25.0f, 8.0f));
+	// shape.setFillColor(sf::Color(0xFFFFB91DFF));
 }

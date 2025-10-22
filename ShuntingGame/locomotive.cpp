@@ -5,14 +5,12 @@
 Locomotive::Locomotive(Track* track)
 {
 	// Put us on the track
-	CurrentTrack = track;
 	PositionOnTrack = 0.0f;
-
-	printf("current track pointer %p\n", (void*)CurrentTrack);
+	CurrentTrack = track;
 
 	// Make the actual loco
-	shape = sf::RectangleShape(sf::Vector2f(25.0f, 8.0f));
-	shape.setFillColor(sf::Color::Black);
+	shape = new sf::RectangleShape(sf::Vector2f(25.0f, 8.0f));
+	shape->setFillColor(sf::Color::Black);
 }
 
 void Locomotive::Move()
