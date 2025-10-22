@@ -2,6 +2,18 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "Debug ShuntingGame",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/Debug/ShuntingGame.exe",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}/ShuntingGame",
+			"environment": [],
+			"console": "integratedTerminal",
+			"preLaunchTask": "Build ShuntingGame Debug"
+		},
+		{
 			"name": "Launch ShuntingGame",
 			"type": "cppvsdbg",
 			"request": "launch",
