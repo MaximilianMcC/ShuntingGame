@@ -152,6 +152,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="assetManager.cpp" />
     <ClCompile Include="locomotive.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="railVehicle.cpp" />
@@ -161,6 +162,7 @@
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="assetManager.h" />
     <ClInclude Include="locomotive.h" />
     <ClInclude Include="numericalVectors.h" />
     <ClInclude Include="railVehicle.h" />
