@@ -4,6 +4,10 @@
 
 class Track
 {
+private:
+	// TODO: delete
+	sf::Text* debugText;
+
 protected:
 	sf::RectangleShape shape;
 public:

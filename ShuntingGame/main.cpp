@@ -4,12 +4,16 @@
 #include "track.h"
 #include "locomotive.h"
 #include "rollingStock.h"
+#include "assetManager.h"
 
 int main()
 {	
 	// SFML setup
-	sf::RenderWindow window(sf::VideoMode({ 640, 480 }), "test");
+	sf::RenderWindow window(sf::VideoMode({ 640, 480 }), "we should turn the skytower into a rocket ship");
 	sf::Clock deltaTimeClock = sf::Clock();
+
+	// Load the debug font
+	AssetManager::LoadDefaultFont("debug", "consola");
 
 	// Share the window so we can draw and whatnot
 	Utils::Init(&window);
@@ -45,7 +49,7 @@ int main()
 		}
 
 		// Update
-		// loco->Update();
+		loco->Update();
 
 		// Draw
 		window.clear(sf::Color::Magenta);
