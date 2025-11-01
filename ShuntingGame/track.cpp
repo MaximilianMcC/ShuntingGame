@@ -3,6 +3,8 @@
 #include <sstream>
 #include "utils.h"
 #include "assetManager.h"
+#include "trackHandler.h"
+#include "railVehicle.h"
 
 Track::Track(float length, sf::Vector2f position)
 {
@@ -43,9 +45,33 @@ void Track::SetPosition(sf::Vector2f newPosition)
 	debugText->setPosition(Position);
 }
 
+std::vector<RailVehicle*> Track::GetRailVehicles()
+{
+	std::vector<RailVehicle*> vehiclesOnUs;
+
+	// Loop over everything on the railway
+	for (RailVehicle* vehicle : TrackHandler::ThingsOnTheTrack)
+	{
+		// Check for if its on us
+		if (vehicle->CurrentTrack == this) vehiclesOnUs.push_back(vehicle);
+	}
+
+	// Give back the list
+	return vehiclesOnUs;
+}
+
 void Track::Draw()
 {
 	Utils::GetWindow()->draw(shape);
 
 	Utils::GetWindow()->draw(*debugText);
+
+	if (GetRailVehicles().size() > 0)
+	{
+		debugText->setFillColor(sf::Color::Black);
+	}
+	else
+	{
+		debugText->setFillColor(sf::Color::White);
+	}
 }

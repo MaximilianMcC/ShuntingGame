@@ -1,5 +1,6 @@
 #include "railVehicle.h"
 
+#include "track.h"
 #include "utils.h"
 
 // TODO: Stop you from going off the edge of tracks
@@ -31,6 +32,6 @@ void RailVehicle::FollowTrack(float newPositionOnTrack)
 
 void RailVehicle::Draw()
 {
-    shape->setPosition(CurrentTrack->Position + sf::Vector2f(PositionOnTrack, 0.0f));
-    Utils::GetWindow()->draw(*shape);
+	shape->setPosition(CurrentTrack->Position + sf::Vector2f(PositionOnTrack, 0.0f));
+	Utils::GetWindow()->draw(*shape);
 }

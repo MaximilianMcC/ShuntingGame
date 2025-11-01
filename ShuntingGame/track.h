@@ -1,6 +1,9 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <vector>
+
+class RailVehicle;
 
 class Track
 {
@@ -21,6 +24,8 @@ public:
 
 	sf::Vector2f GetEndPosition();
 	void SetPosition(sf::Vector2f newPosition);
+
+	std::vector<RailVehicle*> GetRailVehicles();
 
 	void Draw();
 };

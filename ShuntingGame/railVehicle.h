@@ -1,6 +1,7 @@
 #pragma once
 
-#include "track.h"
+#include <SFML/Graphics.hpp>
+class Track;
 
 class RailVehicle
 {

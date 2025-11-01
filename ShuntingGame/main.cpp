@@ -8,7 +8,7 @@
 #include "trackHandler.h"
 
 int main()
-{	
+{
 	// SFML setup
 	sf::RenderWindow window(sf::VideoMode({ 640, 480 }), "Corporate Business Music Playlist (1 hour) Light and Upbeat Background Music For Business");
 	sf::Clock deltaTimeClock = sf::Clock();
@@ -25,7 +25,7 @@ int main()
 	TrackHandler::Add(new Track(100.0f));
 	TrackHandler::Add(new Track(100.0f));
 
-	Locomotive* loco = new Locomotive(root);
+	TrackHandler::ThingsOnTheTrack.push_back(new Locomotive(root));
 
 	// Game window
 	while (window.isOpen())
@@ -40,17 +40,14 @@ int main()
 			if (event->is<sf::Event::Closed>()) window.close();
 		}
 
-		// Update
-		loco->Update();
+		TrackHandler::Update();
 
 		// Draw
 		window.clear(sf::Color::Magenta);
 		TrackHandler::DrawAllTrack();
-		loco->Draw();
+		TrackHandler::DrawAllVehicles();
 		window.display();
 	}
-
-	delete loco;
 
 	TrackHandler::RemoveAll();
 

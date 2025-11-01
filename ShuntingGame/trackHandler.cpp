@@ -1,7 +1,7 @@
 #include "trackHandler.h"
 
 std::vector<Track*> TrackHandler::Railway;
-std::vector<RailVehicle> TrackHandler::ThingsOnTheTrack;
+std::vector<RailVehicle*> TrackHandler::ThingsOnTheTrack;
 
 void TrackHandler::Add(Track* trackToAdd)
 {
@@ -36,6 +36,22 @@ void TrackHandler::RemoveAll()
 		Railway[i] = nullptr;
 	}
 	Railway.clear();
+
+	// Delete all rail vehicles
+	for (size_t i = 0; i < ThingsOnTheTrack.size(); i++)
+	{
+		delete ThingsOnTheTrack[i];
+		ThingsOnTheTrack[i] = nullptr;
+	}
+	ThingsOnTheTrack.clear();
+}
+
+void TrackHandler::Update()
+{
+	for (size_t i = 0; i < ThingsOnTheTrack.size(); i++)
+	{
+		ThingsOnTheTrack[i]->Update();
+	}
 }
 
 void TrackHandler::DrawAllTrack()
@@ -43,5 +59,13 @@ void TrackHandler::DrawAllTrack()
 	for (size_t i = 0; i < Railway.size(); i++)
 	{
 		Railway[i]->Draw();
+	}
+}
+
+void TrackHandler::DrawAllVehicles()
+{
+	for (size_t i = 0; i < ThingsOnTheTrack.size(); i++)
+	{
+		ThingsOnTheTrack[i]->Draw();
 	}
 }
