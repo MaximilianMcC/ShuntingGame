@@ -4,20 +4,16 @@
 #include "utils.h"
 #include "assetManager.h"
 
-Track::Track(sf::Vector2f position, float length)
+Track::Track(float length, sf::Vector2f position)
 {
-	// Assign stuff
-	Position = position;
+	// Set its length
+	// TODO: Make this based on texture/type or something
 	Length = length;
-
-	// TODO: Use the position of the previous bit of track
 
 	// Make the rectangle
 	// TODO: Use textures
 	shape = sf::RectangleShape(sf::Vector2f(Length, 10.0f));
-	shape.setPosition(Position);
 	shape.setFillColor(Utils::GetRandomColor());
-	shape.setOutlineColor(Utils::GetRandomColor());
 
 	// Make the debug text
 	{
@@ -28,8 +24,23 @@ Track::Track(sf::Vector2f position, float length)
 
 		// Make the actual text
 		debugText = new sf::Text(*AssetManager::GetFont("debug"), address, 16u);
-		debugText->setPosition(Position);
 	}
+
+	// Set the position if we supplied one
+	SetPosition(position);
+}
+
+sf::Vector2f Track::GetEndPosition()
+{
+	return Position + sf::Vector2f(Length, 0.0f);
+}
+
+void Track::SetPosition(sf::Vector2f newPosition)
+{
+	Position = newPosition;
+
+	shape.setPosition(Position);
+	debugText->setPosition(Position);
 }
 
 void Track::Draw()

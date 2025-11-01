@@ -5,11 +5,12 @@
 #include "locomotive.h"
 #include "rollingStock.h"
 #include "assetManager.h"
+#include "trackHandler.h"
 
 int main()
 {	
 	// SFML setup
-	sf::RenderWindow window(sf::VideoMode({ 640, 480 }), "we should turn the skytower into a rocket ship");
+	sf::RenderWindow window(sf::VideoMode({ 640, 480 }), "Corporate Business Music Playlist (1 hour) Light and Upbeat Background Music For Business");
 	sf::Clock deltaTimeClock = sf::Clock();
 
 	// Load the debug font
@@ -18,22 +19,13 @@ int main()
 	// Share the window so we can draw and whatnot
 	Utils::Init(&window);
 
-	Track* track1 = new Track(sf::Vector2f(100.0f, 100.0f), 100.0f);
-	Track* track2 = new Track(sf::Vector2f(200.0f, 100.0f), 200.0f);
-	Track* track3 = new Track(sf::Vector2f(400.0f, 100.0f), 200.0f);
-	Track* track4 = new Track(sf::Vector2f(600.0f, 100.0f), 300.0f);
+	Track* root = new Track(200.0f);
+	root->SetPosition(sf::Vector2f(50, 50));
+	TrackHandler::Add(root);
+	TrackHandler::Add(new Track(100.0f));
+	TrackHandler::Add(new Track(100.0f));
 
-	track1->NextTrack = track2;
-	track2->NextTrack = track3;
-	track3->NextTrack = track4;
-	track4->NextTrack = nullptr;
-
-	track2->PreviousTrack = track1;
-	track3->PreviousTrack = track2;
-	track4->PreviousTrack = track3;
-	track1->PreviousTrack = nullptr;
-
-	Locomotive* loco = new Locomotive(track1);
+	Locomotive* loco = new Locomotive(root);
 
 	// Game window
 	while (window.isOpen())
@@ -53,19 +45,14 @@ int main()
 
 		// Draw
 		window.clear(sf::Color::Magenta);
-		track1->Draw();
-		track2->Draw();
-		track3->Draw();
-		track4->Draw();
+		TrackHandler::DrawAllTrack();
 		loco->Draw();
 		window.display();
 	}
 
 	delete loco;
-	delete track1;
-	delete track2;
-	delete track3;
-	delete track4;
+
+	TrackHandler::RemoveAll();
 
 	return 0;
 }

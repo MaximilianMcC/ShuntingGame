@@ -14,10 +14,13 @@ public:
 	sf::Vector2f Position;
 
 	float Length;
-	Track* NextTrack;
-	Track* PreviousTrack;
+	Track* NextTrack = nullptr;
+	Track* PreviousTrack = nullptr;
 
-	Track(sf::Vector2f position, float length);
+	Track(float length, sf::Vector2f position = { 0, 0 });
+
+	sf::Vector2f GetEndPosition();
+	void SetPosition(sf::Vector2f newPosition);
 
 	void Draw();
 };

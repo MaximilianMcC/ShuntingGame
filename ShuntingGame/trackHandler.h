@@ -7,6 +7,11 @@
 class TrackHandler
 {
 public:
-	static std::vector<Track> Track;
+	static std::vector<Track*> Railway;
 	static std::vector<RailVehicle> ThingsOnTheTrack;
+
+	static void Add(Track* trackToAdd);
+	static void RemoveAll();
+
+	static void DrawAllTrack();
 };
